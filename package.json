@@ -1,0 +1,47 @@
+{
+  "name": "express-restful",
+  "version": "1.0.0",
+  "private": true,
+  "description": "express based restful api repo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "debug": "nodemon --ext js,json --debug=3001 server.js",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "restful"
+  ],
+  "author": "dupengdl",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dupengdl/express-restful.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^10.0.0-beta.4",
+    "nodemon": "^1.19.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "npm i"
+    }
+  },
+  "lint-staged": {
+    "./(src/**/*.{ts,js}|server.js)": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
