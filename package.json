@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "debug": "nodemon --ext js,json --debug=3001 server.js",
+    "dev": "nodemon --ext js,json --delay 2000ms server.js",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
