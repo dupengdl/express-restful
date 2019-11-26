@@ -10,12 +10,13 @@ router.get('/cors', function(req, res, next) {
   next()
 })
 
-router.post('/mr-hooks', function(req, res, next) {
-  console.log(req.body)
+router.post('/mr-hooks', function(req, res) {
+  // secret token: bfe5626e-0b45-c903-b3c5-753eb24494a3
+  console.log('headers:', req.headers)
+  console.log('body:', req.body)
   res.json({
     text: 'post success'
   })
-  next()
 })
 
 router.all('*', function(req, res) {
